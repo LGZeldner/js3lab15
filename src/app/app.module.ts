@@ -13,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {NgxMaskModule} from "ngx-mask";
 import { AppFirstnameFilterPipe } from './shared/pipes/app-firstname-filter.pipe';
 import { AppLastnameFilterPipe } from './shared/pipes/app-lastname-filter.pipe';
+import { AppPhonePipe } from './shared/pipes/app-phone.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppLastnameFilterPipe } from './shared/pipes/app-lastname-filter.pipe';
     PersonViewComponent,
     PersonsListComponent,
     AppFirstnameFilterPipe,
-    AppLastnameFilterPipe
+    AppLastnameFilterPipe,
+    AppPhonePipe
   ],
   imports: [
     BrowserModule,

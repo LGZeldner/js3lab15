@@ -39,9 +39,15 @@ export class PersonsService implements OnInit{
     }
   }
   async on_edit_person (ed_person: Person) {
-    Object.assign (this.persons.find((element, index, array) => {
+    console.log("edit " + ed_person.id);
+    console.log(this.persons);
+    /*Object.assign (this.persons.find((element, index, array) => {
       return (element.id === ed_person.id)
-    }), ed_person);
+    }), ed_person);*/
+    this.persons.splice (
+      this.persons.findIndex (person => {person.id === ed_person.id}),
+      1, ed_person);
+    console.log(this.persons);
     try {
       await this.personsApiService.putPersons(ed_person.id, {
         firstname: ed_person.firstname, lastname: ed_person.lastname, phone: ed_person.phone});

@@ -21,9 +21,9 @@ export class PersonAddComponent implements OnInit {
               private router: Router,
               private personsServise: PersonsService) {
     this.activatedRouter.params.subscribe(param => {
-      if (!isNullOrUndefined(param)) this.id = param.id;
-      else this.id = 0;
+       this.id = param.id;
     });
+    if (!isNullOrUndefined(this.id))console.log(this.id);
   }
 
   ngOnInit() {
@@ -45,7 +45,7 @@ export class PersonAddComponent implements OnInit {
       let person = new Person (this.addForm.value.firstname, this.addForm.value.lastname, this.addForm.value.phone);
       this.personsServise.on_add_person(person);
     }
-    this.router.navigate([`/list`]);
+    this.router.navigate([`/list`]); /* возвращаемся к списку */
     // this.addperson.emit(person);
 
   }

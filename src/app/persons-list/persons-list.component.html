@@ -1,7 +1,7 @@
 <div class="container">
   <!--(editPerson)="personsService.on_edit_person($event)"-->
     <app-person-view (delPerson)="personsService.on_del_person($event)"
-                     *ngFor="let person of persons"
+                     *ngFor="let person of personsService.persons"
                      [inPerson]="person">
     </app-person-view>
 
