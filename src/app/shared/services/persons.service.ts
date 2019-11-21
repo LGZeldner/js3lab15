@@ -25,6 +25,9 @@ export class PersonsService implements OnInit{
       console.log(err);
     }
   }
+  get_person_by_id (id: number) {
+    return this.persons.find(person => person.id === id);
+  }
   async on_add_person (person: Person) {
     person.id = (this.persons.length)
       ? this.persons[this.persons.length - 1].id + 1

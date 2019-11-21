@@ -27,10 +27,13 @@ export class PersonAddComponent implements OnInit {
   }
 
   ngOnInit() {
+    let ed_person = this.personsServise.get_person_by_id(this.id);
+    console.log (ed_person);
+    if (isNullOrUndefined(ed_person)) ed_person = {firstname: "", lastname: "", phone: ""};
     this.addForm = new FormGroup( {
-      firstname: new FormControl({value: '', disabled: this.disabled_form}, [Validators.required]),
-      lastname: new FormControl({value: '', disabled: this.disabled_form}, [Validators.required]),
-      phone: new FormControl({value: '', disabled: this.disabled_form}, [Validators.required])
+      firstname: new FormControl({value: ed_person.firstname, disabled: this.disabled_form}, [Validators.required]),
+      lastname: new FormControl({value: ed_person.lastname, disabled: this.disabled_form}, [Validators.required]),
+      phone: new FormControl({value: ed_person.phone, disabled: this.disabled_form}, [Validators.required])
     })
   }
   test(elm) {
