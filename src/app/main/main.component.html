@@ -15,7 +15,7 @@
     <div class="col-10">
       <input type="text" [(ngModel)]="search_firstname" class="form-control" *ngIf="firstname_filter">
     </div>
-  </div><!--(editPerson)="personsService.on_edit_person($event)"-->
+  </div>
   <app-person-view (delPerson)="personsService.on_del_person($event)"
                    [inPerson]="person"
                    *ngFor="let person of personsService.persons | appFirstnameFilter:search_firstname | appLastnameFilter:search_lastname">

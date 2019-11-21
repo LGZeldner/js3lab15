@@ -12,9 +12,7 @@ import {isNullOrUndefined} from "util";
 })
 export class PersonAddComponent implements OnInit {
 
-  // @Output() addperson = new EventEmitter<Person>(); /* сделали событие */
   id: number;
-  // selectedItem;
   addForm: FormGroup;
   disabled_form = false;
   constructor(private activatedRouter: ActivatedRoute,
@@ -49,7 +47,6 @@ export class PersonAddComponent implements OnInit {
       this.personsServise.on_add_person(person);
     }
     this.router.navigate([`/list`]); /* возвращаемся к списку */
-    // this.addperson.emit(person);
 
   }
 }

@@ -12,7 +12,7 @@ export class PersonsService implements OnInit{
     console.log("Constructor");
     this.get_persons();
   }
-  ngOnInit() { /* лучше инициализировать здесь */
+  ngOnInit() {
 
   }
   async get_persons () {
@@ -44,9 +44,6 @@ export class PersonsService implements OnInit{
   async on_edit_person (ed_person: Person) {
     console.log("edit " + ed_person.id);
     console.log(this.persons);
-    /*Object.assign (this.persons.find((element, index, array) => {
-      return (element.id === ed_person.id)
-    }), ed_person);*/
     this.persons.splice (
       this.persons.findIndex (person => {person.id === ed_person.id}),
       1, ed_person);
